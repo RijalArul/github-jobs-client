@@ -11,20 +11,26 @@ export default function HomePage () {
   const [filter, setFilter] = useState({})
   const [selectType, setSelectType] = useState(false)
   const [selectValue, setSelectValue] = useState('')
+  const accessToken = localStorage.getItem('accessToken')
 
   const navigation = useNavigate()
   useEffect(() => {
     const handleJobs = async () => {
       const resp = await axios({
         method: 'GET',
-        url: `http://dev3.dansmultipro.co.id/api/recruitment/positions.json?description=${
+        headers: {
+          Authorization: accessToken
+        },
+        url: `http://localhost:3030/api/v1/jobs?page=${''}&description=${
           filter.description === undefined ? '' : filter.description
         }&location=${
           filter.location === undefined ? '' : filter.location
         }&type=${selectValue}`
       })
 
-      setjobs(resp.data)
+      const { result } = resp.data
+
+      setjobs(result)
     }
     handleJobs()
   }, [filter, selectValue])
