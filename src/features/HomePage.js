@@ -2,14 +2,12 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavbarComponent from '../components/NavbarComponent'
-import Pagination from '../components/PaginationComponent'
 
 const pagePerRow = 5
 export default function HomePage () {
   const [next, setNext] = useState(pagePerRow)
   const [jobs, setjobs] = useState([])
   const [filter, setFilter] = useState({})
-  const [selectType, setSelectType] = useState(false)
   const [selectValue, setSelectValue] = useState('')
   const accessToken = localStorage.getItem('accessToken')
 

@@ -82,7 +82,7 @@ export default function LoginPage () {
                         Sign in
                       </button>
                       <div class='text-center'>
-                        <a class='small' href='#'>
+                        <a class='small' href='/register'>
                           Sign Up?
                         </a>
                       </div>
