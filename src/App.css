@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://cdn.dribbble.com/users/6569/screenshots/15810900/media/ba31ac56fc193c29841f6e4578f797b3.png?compress=1&resize=400x300');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.card-container-width {
+  width: 100%;
+}
+
+.card-height {
+  height: 140%;
+  margin-top: 25px
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.box {
+  float: left;
+  width: 200px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f5f5f5;
+  padding-bottom: 10px;
+}
+
+.box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.box .name {
+  padding: 10px 10px 5px 10px;
+  font-weight: 600;
+}
+
+.box .email {
+  font-style: italic;
+  color: #666;
+}
+
+button.btn-load-more {
+  padding: 10px 20px;
+  margin: 20px 0 30px 0;
+  cursor: pointer;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.navbar-github-bg {
+  background-color: #425bfe;
+}
+
+.text-github-jobs {
+  color: #f5f5f5;
+}
