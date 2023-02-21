@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import NavbarComponent from '../components/NavbarComponent'
 import Pagination from '../components/PaginationComponent'
 
@@ -10,6 +11,8 @@ export default function HomePage () {
   const [filter, setFilter] = useState({})
   const [selectType, setSelectType] = useState(false)
   const [selectValue, setSelectValue] = useState('')
+
+  const navigation = useNavigate()
   useEffect(() => {
     const handleJobs = async () => {
       const resp = await axios({
@@ -45,6 +48,10 @@ export default function HomePage () {
       setSelectType(false)
       setSelectValue('')
     }
+  }
+
+  const redirectDetail = id => {
+    navigation(`/${id}`)
   }
 
   return (
@@ -113,9 +120,10 @@ export default function HomePage () {
                 <div
                   key={index}
                   className='px-2.5 md:px-0 card-container-width'
+                  onClick={id => redirectDetail(job?.id)}
                 >
                   <div class='card card-height'>
-                    <h5 class='card-title'>{job?.title}</h5>
+                    <h5 class='card-title mt-3'>{job?.title}</h5>
                     <p class='card-body'>
                       {job?.company} - <span>{job?.type}</span> -{' '}
                       <span>{job?.location}</span>
