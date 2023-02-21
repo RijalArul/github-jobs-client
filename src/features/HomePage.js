@@ -46,10 +46,8 @@ export default function HomePage () {
   const handleSelectType = e => {
     e.preventDefault()
     if (selectValue === '') {
-      setSelectType(true)
       setSelectValue('Full Time')
     } else {
-      setSelectType(false)
       setSelectValue('')
     }
   }
